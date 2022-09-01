@@ -23,7 +23,7 @@ def main():
 		number = sys.argv[1]
 		output = requests.get(f'http://apilayer.net/api/validate?access_key={key}&number={number}&country_code=&format=1').text
 		obj = json.loads(output)
-		
+
 		country_code = obj['country_code']
 		country_name = obj['country_name']
 		location = obj['location']
@@ -58,7 +58,7 @@ def main():
 			print(' - Getting Carrier\t\t[ OK ]')
 
 		time.sleep(0.2)
-		if line_type == None:
+		if line_type is None:
 			print(' - Getting Device\t\t[ FAILED ]')
 		else:
 			print(' - Getting Device\t\t[ OK ]')
